@@ -4,7 +4,7 @@ require_once './restrictedsession.php';
 $query = "SELECT ID,username,status FROM user";
 if(isset($_POST['keyword'])){
     $keyword = sanitizeString($_POST['keyword']);
-    $query = $query . " WHERE username LIKE '%$keyword%' OR status LIKE '%$keyword%' OR ID LIKE'%$keyword%'";
+    $query = $query . " WHERE username LIKE '%$keyword%' OR ID LIKE'%$keyword%'";
 }
 $result = queryMysql($query);
 $error = $msg = "";
@@ -25,7 +25,6 @@ if (!$result){
     <tr>
         <th>ID</th>
         <th>Username</th>
-        <th>Status</th>
     </tr>
     <?php
     while ($row = mysqli_fetch_array($result)) {
@@ -35,7 +34,6 @@ if (!$result){
         echo "<tr>";
         echo "<td>$ID</td>";
         echo "<td>$username</td>";
-        echo "<td>$status</td>";
         ?>
         <td>
             <form class="frminline" action="deleteadmin.php" method="post" onsubmit="return confirmDelete();">

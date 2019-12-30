@@ -6,9 +6,8 @@ $error = $msg = "";
 if (isset($_POST['ID'])) { //updating
     $ID=sanitizeString($_POST['ID']);
     $username = sanitizeString($_POST['username']);
-    $status = sanitizeString($_POST['status']);
     $uId = $_SESSION['uId'];
-     $query = "UPDATE user SET username = '$username', status = '$status' WHERE ID='$ID'";
+     $query = "UPDATE user SET username = '$username' WHERE ID='$ID'";
         $result = queryMysql($query);
         if (!$result) {
             $error = "Couldn't update admin $username, please try again";

@@ -6,11 +6,10 @@ if (isset($_POST['ID']))
     $ID=sanitizeString($_POST['ID']);
     $Account = sanitizeString($_POST['Account']);
     $Password = sanitizeString($_POST['Password']);
-    $status = sanitizeString($_POST['status']);
         $uId = $_SESSION['uId'];
         $token=passwordToToken($Password);
-        $query = "INSERT INTO user(ID,username,password,status)"
-                . "values('$ID','$Account','$token','$status')";
+        $query = "INSERT INTO user(ID,username,password)"
+                . "values('$ID','$Account','$token')";
         $result = queryMysql($query);
         if (!$result) {
             $error = "Adding error, please try again";
@@ -31,9 +30,6 @@ if (isset($_POST['ID']))
         Password:
         <br>
         <input type="password" name="Password" id="Password" required /><br>
-        Status<br>
-        <input type="radio" name="status" value="0" required>0 (non-editable admin)<br>
-        <input type="radio" name="status" value="1" required>1 (editable admin)
         <br><br>
         <input type="submit" value="Add" /><br>
         <span><?php echo $message; ?></span><br>
