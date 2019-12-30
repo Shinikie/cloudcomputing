@@ -10,7 +10,7 @@
 		<h1>DAY DREAMER AUTO</h1>
 		<h2>Luxury car for showing off</h2>
 		<div id="dang-nhap">
-			<a href="http://localhost/asm/backend/index.php">Login (For admin)</a>
+			<a href="backend/index.php">Login (For admin)</a>
 		</div>
 	</div>
 	<div id="menu">

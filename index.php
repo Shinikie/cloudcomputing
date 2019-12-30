@@ -15,7 +15,7 @@
 			<ul>
 				<li><a href="homepage.php">HomePage</a></li>
 				<li><a href="#About">About Us</a></li>
-				<li><a href="http://localhost/asm/backend/index.php">Login</a></li>
+				<li><a href="backend/index.php">Login</a></li>
 			</ul>
 		</div>
 	</div>
